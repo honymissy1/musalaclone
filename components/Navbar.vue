@@ -79,8 +79,6 @@ const close = () =>{
     background-color: rgba(0, 0, 0, 0.623);
   }
 
-
-
   .logo img{
     width: 100%
   }

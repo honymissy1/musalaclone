@@ -109,7 +109,7 @@
   .social{
     width: 70px;
     height: 100;
-    border-radius: 50px;
+    border-radius:0px 50px 50px 0px;
     background-color: white;
     display: flex;
     flex-direction: column;
