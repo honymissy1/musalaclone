@@ -1,17 +1,20 @@
 <template>
-  <div @click="open" class="nav-opener" style="position: absolute"><h1>Bar</h1></div>
+  <div @click="open" class="nav-opener" style="position: absolute; padding: 20px;">
+    <div class="span"></div>
+    <div class="span"></div>
+    <div class="span"></div>
+  </div>
   <div @click="close" class="overlay" style="position: fixed"></div>
-  
   <nav id="nav">
-    <div @click="close" class="overlay" style="position: fixed"></div>
     <div class="cancel" style="width: 100%; position: relative;">
-      <span @click="close" style="font-size: 40px;position: absolute; right: 10px">X</span>
+      <span @click="close" style="font-size: 40px;position: absolute; right: 10px; top: 0px">X</span>
     </div>
-
+    <div @click="close" class="overlay" style="position: fixed"></div>
+    
     <div class="logo">
       <img src="../assets/images/musala_logo-removebg-preview.png" alt="">
     </div>
-
+    
     <ul>
       <li class="active">Home</li>
       <li>Company</li>
@@ -19,14 +22,12 @@
       <li>About</li>
       <li>Contact</li>
     </ul>
-
     <button>Join Us</button>
   </nav>
 </template>
 
 <script setup>
   
-
 const open = () =>{
   const nav = document.querySelector('#nav');
   const overlay = document.querySelector('.overlay');
@@ -78,6 +79,8 @@ const close = () =>{
     background-color: rgba(0, 0, 0, 0.623);
   }
 
+
+
   .logo img{
     width: 100%
   }
@@ -102,6 +105,7 @@ const close = () =>{
   }
 
   button{
+    position: relative;
     width: 100px;
     max-width: 100px;
     padding: 10px;
@@ -118,7 +122,9 @@ const close = () =>{
 
   @media screen and (max-width: 700px){
     nav{
-      height: 100vh;
+      border: 1px solid;
+      min-height: 100vh;
+      height: auto;
       position: fixed;
       min-width: 300px;
       width: 50%;
@@ -139,19 +145,16 @@ const close = () =>{
 
     ul{
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       gap: 10px;
-      /* border: 1px solid; */
-      width: 100%
-
+      width: 100%;
+      max-width: 100%;
     }
 
     ul li{
-      font-size: 30px;
-      gap: 0px;
-      padding:0;
-      
+      font-size: 30px;    
+      padding:0; 
     }
 
     button{
@@ -169,6 +172,23 @@ const close = () =>{
     
     .cancel{
       display: block;
+      position: absolute;
+      top: 0px;
+      right: 0px;
     }
+
+    button{
+      position: relative;
+      padding: 5px;
+      margin: 10px 0px;
+      width: 100%;
+    }
+
+   .nav-opener .span{
+    width: 40px;
+    height: 5px;
+    background: white;
+    margin-bottom: 9px;
+   }
   }
 </style>
